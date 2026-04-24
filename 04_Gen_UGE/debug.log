@@ -1,0 +1,15 @@
++ python /home/xwanaf/bio/scGPT-dev-temp/Atlas_integration/Reproducibility/Validation/04_Gen_UGE/UGE_to_adata.py --base_path /import/home2/xwanaf/Img2Expr/data/Benchmarking/reproducibility/ --tissue Training_input --save_folder Training_output --traingene_path /import/home2/xwanaf/Img2Expr/data/Benchmarking/reproducibility --transformer_out_path /import/home2/xwanaf/Img2Expr/data/Benchmarking/reproducibility/Training_output/Inference_HLCA_KL1e-3_maskp5 --save_atlas_name atlas_1e3_maskp5.h5ad
+2026-04-24 16:22:52,500 : INFO : save_path: /import/home2/xwanaf/Img2Expr/data/Benchmarking/reproducibility/Training_output
+2026-04-24 16:22:52,506 : INFO : common_dec_genes len: 1702
+2026-04-24 16:22:52,507 : INFO : common_dec_genes first 3: ['PACRG' 'CD34' 'NR2F1']
+2026-04-24 16:22:55,810 : INFO : loaded raw adata_inte shape: (725801, 1702)
+2026-04-24 16:22:56,379 : INFO : loaded raw adata_inte X max: 8.9375
+2026-04-24 16:22:56,379 : INFO : load obs_concat ...
+/home/xwanaf/bio/scGPT-dev-temp/Atlas_integration/Reproducibility/Validation/04_Gen_UGE/UGE_to_adata.py:155: DtypeWarning: Columns (13,16,18,25,28,31,32,33,34,35,36,38,39,40,41,42,44,45,46,47,48,49,52,54,56,58,60) have mixed types. Specify dtype option on import or set low_memory=False.
+  obs_concat = pd.read_csv(save_parquet_path / obs_concat_save_name, index_col = 0)
+2026-04-24 16:23:21,934 : INFO : start pca and umap ...
+/home/xwanaf/.conda/envs/unigenex_env2/lib/python3.10/site-packages/scanpy/preprocessing/_pca/__init__.py:226: FutureWarning: Argument `use_highly_variable` is deprecated, consider using the mask argument. Use_highly_variable=True can be called through mask_var="highly_variable". Use_highly_variable=False can be called through mask_var=None
+  mask_var_param, mask_var = _handle_mask_var(
+/home/xwanaf/.conda/envs/unigenex_env2/lib/python3.10/site-packages/scanpy/preprocessing/_pca/__init__.py:384: ImplicitModificationWarning: Setting element `.obsm['X_pca']` of view, initializing view as actual.
+  adata.obsm[key_obsm] = x_pca
+2026-04-24 16:34:13,784 : INFO : save adata_inte_sub to /import/home2/xwanaf/Img2Expr/data/Benchmarking/reproducibility/Training_output/atlas_1e3_maskp5.h5ad

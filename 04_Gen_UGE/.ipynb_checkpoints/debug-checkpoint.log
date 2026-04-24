@@ -1,0 +1,7 @@
++ python /home/xwanaf/bio/scGPT-dev-temp/Atlas_integration/Reproducibility/Validation/04_Gen_UGE/Gen_UGE.py --config /import/home2/xwanaf/Img2Expr/data/Benchmarking/reproducibility/Training_input/config_inference.yaml -s /import/home2/xwanaf/Img2Expr/data/Benchmarking/reproducibility/Training_output/Inference_HLCA_KL1e-3_maskp5 --pretrain_root /import/home2/xwanaf/Img2Expr/data/Benchmarking/reproducibility/Training_output/Generation_HLCA_KL1e-3_maskp5 --eval_batch_size 256 --ddim_steps 250 --subsample 1000000 --custom_ckptpath --ckpt_filename reproduce_epoch30.ckpt
+/home/xwanaf/.conda/envs/unigenex_env2/lib/python3.10/site-packages/lightning_fabric/__init__.py:41: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+0
+Traceback (most recent call last):
+  File "/home/xwanaf/bio/scGPT-dev-temp/Atlas_integration/Reproducibility/Validation/04_Gen_UGE/Gen_UGE.py", line 59, in <module>
+    from CustomLogger import plainLogger
+ModuleNotFoundError: No module named 'CustomLogger'

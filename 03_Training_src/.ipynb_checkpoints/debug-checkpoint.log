@@ -1,0 +1,278 @@
++ python /home/xwanaf/bio/scGPT-dev-temp/Atlas_integration/Reproducibility/Validation/03_Training_src/train_UniGeneX.py --config /import/home2/xwanaf/Img2Expr/data/Benchmarking/reproducibility/Training_input/config_train.yaml -s /import/home2/xwanaf/Img2Expr/data/Benchmarking/reproducibility/Training_output/Generation_HLCA_KL1e-3_maskp5 --num_workers 28 --pin_memory
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_csv from `anndata` is deprecated. Import anndata.io.read_csv instead.
+  warnings.warn(msg, FutureWarning)
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_text from `anndata` is deprecated. Import anndata.io.read_text instead.
+  warnings.warn(msg, FutureWarning)
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_excel from `anndata` is deprecated. Import anndata.io.read_excel instead.
+  warnings.warn(msg, FutureWarning)
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_mtx from `anndata` is deprecated. Import anndata.io.read_mtx instead.
+  warnings.warn(msg, FutureWarning)
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_loom from `anndata` is deprecated. Import anndata.io.read_loom instead.
+  warnings.warn(msg, FutureWarning)
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_hdf from `anndata` is deprecated. Import anndata.io.read_hdf instead.
+  warnings.warn(msg, FutureWarning)
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_umi_tools from `anndata` is deprecated. Import anndata.io.read_umi_tools instead.
+  warnings.warn(msg, FutureWarning)
+[transformers] Disabling PyTorch because PyTorch >= 2.4 is required but found 2.3.1
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/lightning_fabric/__init__.py:41: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/torchtext/vocab/__init__.py:4: UserWarning: 
+/!\ IMPORTANT WARNING ABOUT TORCHTEXT STATUS /!\ 
+Torchtext is deprecated and the last released version will be 0.18 (this one). You can silence this warning by calling the following at the beginnign of your scripts: `import torchtext; torchtext.disable_torchtext_deprecation_warning()`
+  warnings.warn(torchtext._TORCHTEXT_DEPRECATION_MSG)
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/torchtext/utils.py:4: UserWarning: 
+/!\ IMPORTANT WARNING ABOUT TORCHTEXT STATUS /!\ 
+Torchtext is deprecated and the last released version will be 0.18 (this one). You can silence this warning by calling the following at the beginnign of your scripts: `import torchtext; torchtext.disable_torchtext_deprecation_warning()`
+  warnings.warn(torchtext._TORCHTEXT_DEPRECATION_MSG)
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/torch/nn/modules/transformer.py:306: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer was not TransformerEncoderLayer
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+/home/xwanaf/bio/scGPT-dev-temp/Atlas_integration/Reproducibility/Validation/UniGeneX/model/model_pl_integration.py:1830: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer was not TransformerEncoderLayer
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+0
+finish import
+vocab path: /import/home2/xwanaf/Img2Expr/data/Benchmarking/reproducibility/default_census_vocab.json
+initialize common_dec_genes with length: 1703
+#============================ Transformer ckpt_path: None ============================#
+Monitoring val/recon as checkpoint metric.
+Merged modelckpt-cfg: 
+{'target': 'pytorch_lightning.callbacks.ModelCheckpoint', 'params': {'dirpath': '/import/home2/xwanaf/Img2Expr/data/Benchmarking/reproducibility/Training_output/Generation_HLCA_KL1e-3_maskp5/ckpt', 'filename': '{epoch:06}', 'verbose': True, 'save_last': True, 'every_n_epochs': 5, 'save_top_k': -1, 'enable_version_counter': False, 'monitor': 'val/recon'}}
+{'batch_size': 128, 'eval_batch_size': 256, 'data_source': '/import/home2/xwanaf/Img2Expr/data/Benchmarking/reproducibility/Training_input/cls_prefix_data.parquet', 'test_out_of_sample_data_source': '/import/home2/xwanaf/Img2Expr/data/Benchmarking/reproducibility/Training_input/cls_prefix_data_valid.parquet', 'test_data_source': None, 'vocab_path': '/import/home2/xwanaf/Img2Expr/data/Benchmarking/reproducibility/default_census_vocab.json', 'pad_token': '<pad>', 'pad_value': -2, 'mask_ratio': 0.5, 'common_dec_genes_path': '/import/home2/xwanaf/Img2Expr/data/Benchmarking/reproducibility/pretrain_data_train_genes.npy', 'gene_name_column': None, 'valid_use_common_gene': True, 'test_use_common_gene': False}
+Load dataset from /import/home2/xwanaf/Img2Expr/data/Benchmarking/reproducibility/Training_input/cls_prefix_data.parquet
+Loaded 742403 examples from /import/home2/xwanaf/Img2Expr/data/Benchmarking/reproducibility/Training_input/cls_prefix_data.parquet
+Load dataset from /import/home2/xwanaf/Img2Expr/data/Benchmarking/reproducibility/Training_input/cls_prefix_data_valid.parquet
+Generating train split: 0 examples [00:00, ? examples/s]Generating train split: 4027 examples [00:00, 6277.83 examples/s]Generating train split: 8054 examples [00:00, 9815.96 examples/s]Generating train split: 12081 examples [00:01, 11796.73 examples/s]Generating train split: 16108 examples [00:01, 12419.69 examples/s]Generating train split: 20135 examples [00:01, 13838.23 examples/s]Generating train split: 24162 examples [00:02, 6571.94 examples/s] Generating train split: 32216 examples [00:03, 11744.58 examples/s]Generating train split: 40270 examples [00:03, 17566.44 examples/s]Generating train split: 44297 examples [00:03, 18030.78 examples/s]Generating train split: 48324 examples [00:04, 8252.31 examples/s] Generating train split: 51958 examples [00:04, 9649.10 examples/s]Generating train split: 51958 examples [00:05, 10140.40 examples/s]
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+IPU available: False, using: 0 IPUs
+HPU available: False, using: 0 HPUs
+Loaded 51958 examples from /import/home2/xwanaf/Img2Expr/data/Benchmarking/reproducibility/Training_input/cls_prefix_data_valid.parquet
+train dataset do not have key celltypes 
+valid out of sample dataset do not have key celltypes 
+train dataset do not have key celltypes 
+train set number of samples: 742403, 
+valid set number of samples: 51958, 
+train set gene len: 1585, 
+valid set gene len: 1585, 
+will use common_dec_genes, common_dec_genes gene len: 1701, 
+================================================
+Use mask; mask ratio: 0.5
+================================================
+accumulate_grad_batches = 1
+++++ NOT USING LR SCALING ++++
+Setting learning rate to 1.00e-04
+Namespace(strategy='fsdp', precision='16-mixed', check_val_every_n_epoch=1, max_epochs=30, benchmark=True, gpus='0,1,2,3', num_nodes=1, devices=4, accelerator='gpu') {'logger': <CustomLogger.plainLogger object at 0x7f2b50cc2980>, 'callbacks': [<pytorch_lightning.callbacks.model_checkpoint.ModelCheckpoint object at 0x7f2b50d24760>]}
+FSDP_strategy: <pytorch_lightning.strategies.fsdp.FSDPStrategy object at 0x7f2de2275630>
+finish initializing trainer, start fit
+Traceback (most recent call last):
+  File "/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/torch/cuda/__init__.py", line 306, in _lazy_init
+    queued_call()
+  File "/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/torch/cuda/__init__.py", line 174, in _check_capability
+    capability = get_device_capability(d)
+  File "/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/torch/cuda/__init__.py", line 430, in get_device_capability
+    prop = get_device_properties(device)
+  File "/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/torch/cuda/__init__.py", line 448, in get_device_properties
+    return _get_device_properties(device)  # type: ignore[name-defined]
+RuntimeError: device >= 0 && device < num_gpus INTERNAL ASSERT FAILED at "../aten/src/ATen/cuda/CUDAContext.cpp":50, please report a bug to PyTorch. device=, num_gpus=
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/xwanaf/bio/scGPT-dev-temp/Atlas_integration/Reproducibility/Validation/03_Training_src/train_UniGeneX.py", line 665, in <module>
+    trainer.fit(model, train_loader, val_dataloaders=val_dataloaders)
+  File "/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 544, in fit
+    call._call_and_handle_interrupt(
+  File "/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/pytorch_lightning/trainer/call.py", line 43, in _call_and_handle_interrupt
+    return trainer.strategy.launcher.launch(trainer_fn, *args, trainer=trainer, **kwargs)
+  File "/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/pytorch_lightning/strategies/launchers/subprocess_script.py", line 105, in launch
+    return function(*args, **kwargs)
+  File "/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 580, in _fit_impl
+    self._run(model, ckpt_path=ckpt_path)
+  File "/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/pytorch_lightning/trainer/trainer.py", line 943, in _run
+    self.strategy.setup_environment()
+  File "/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/pytorch_lightning/strategies/fsdp.py", line 252, in setup_environment
+    super().setup_environment()
+  File "/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/pytorch_lightning/strategies/strategy.py", line 129, in setup_environment
+    self.accelerator.setup_device(self.root_device)
+  File "/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/pytorch_lightning/accelerators/cuda.py", line 46, in setup_device
+    _check_cuda_matmul_precision(device)
+  File "/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/lightning_fabric/accelerators/cuda.py", line 361, in _check_cuda_matmul_precision
+    if not torch.cuda.is_available() or not _is_ampere_or_later(device):
+  File "/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/lightning_fabric/accelerators/cuda.py", line 355, in _is_ampere_or_later
+    major, _ = torch.cuda.get_device_capability(device)
+  File "/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/torch/cuda/__init__.py", line 430, in get_device_capability
+    prop = get_device_properties(device)
+  File "/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/torch/cuda/__init__.py", line 444, in get_device_properties
+    _lazy_init()  # will define _get_device_properties
+  File "/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/torch/cuda/__init__.py", line 312, in _lazy_init
+    raise DeferredCudaCallError(msg) from e
+torch.cuda.DeferredCudaCallError: CUDA call failed lazily at initialization with error: device >= 0 && device < num_gpus INTERNAL ASSERT FAILED at "../aten/src/ATen/cuda/CUDAContext.cpp":50, please report a bug to PyTorch. device=, num_gpus=
+
+CUDA call was originally invoked at:
+
+  File "/home/xwanaf/bio/scGPT-dev-temp/Atlas_integration/Reproducibility/Validation/03_Training_src/train_UniGeneX.py", line 17, in <module>
+    import scanpy as sc
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/scanpy/__init__.py", line 16, in <module>
+    from ._utils import check_versions
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/scanpy/_utils/__init__.py", line 21, in <module>
+    from anndata import AnnData, __version__ as anndata_version
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/anndata/__init__.py", line 29, in <module>
+    from .io import read_h5ad, read_zarr
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/anndata/io.py", line 7, in <module>
+    from ._io.h5ad import read_h5ad, write_h5ad
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/anndata/_io/h5ad.py", line 25, in <module>
+    from ..experimental import read_dispatched
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/anndata/experimental/__init__.py", line 12, in <module>
+    from .pytorch import AnnLoader
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/anndata/experimental/pytorch/__init__.py", line 3, in <module>
+    from ._annloader import AnnLoader
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/anndata/experimental/pytorch/_annloader.py", line 19, in <module>
+    import torch
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/torch/__init__.py", line 1480, in <module>
+    _C._initExtension(manager_path())
+  File "<frozen importlib._bootstrap>", line 1027, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1006, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/torch/cuda/__init__.py", line 238, in <module>
+    _lazy_call(_check_capability)
+  File "/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/torch/cuda/__init__.py", line 235, in _lazy_call
+    _queued_calls.append((callable, traceback.format_stack()))
+
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/tempfile.py:869: ResourceWarning: Implicitly cleaning up <TemporaryDirectory '/tmp/tmpb25fbxow'>
+  _warnings.warn(warn_message, ResourceWarning)
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_csv from `anndata` is deprecated. Import anndata.io.read_csv instead.
+  warnings.warn(msg, FutureWarning)
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_text from `anndata` is deprecated. Import anndata.io.read_text instead.
+  warnings.warn(msg, FutureWarning)
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_excel from `anndata` is deprecated. Import anndata.io.read_excel instead.
+  warnings.warn(msg, FutureWarning)
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_mtx from `anndata` is deprecated. Import anndata.io.read_mtx instead.
+  warnings.warn(msg, FutureWarning)
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_loom from `anndata` is deprecated. Import anndata.io.read_loom instead.
+  warnings.warn(msg, FutureWarning)
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_hdf from `anndata` is deprecated. Import anndata.io.read_hdf instead.
+  warnings.warn(msg, FutureWarning)
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_csv from `anndata` is deprecated. Import anndata.io.read_csv instead.
+  warnings.warn(msg, FutureWarning)
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_text from `anndata` is deprecated. Import anndata.io.read_text instead.
+  warnings.warn(msg, FutureWarning)
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_excel from `anndata` is deprecated. Import anndata.io.read_excel instead.
+  warnings.warn(msg, FutureWarning)
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_mtx from `anndata` is deprecated. Import anndata.io.read_mtx instead.
+  warnings.warn(msg, FutureWarning)
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_loom from `anndata` is deprecated. Import anndata.io.read_loom instead.
+  warnings.warn(msg, FutureWarning)
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_hdf from `anndata` is deprecated. Import anndata.io.read_hdf instead.
+  warnings.warn(msg, FutureWarning)
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_csv from `anndata` is deprecated. Import anndata.io.read_csv instead.
+  warnings.warn(msg, FutureWarning)
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_text from `anndata` is deprecated. Import anndata.io.read_text instead.
+  warnings.warn(msg, FutureWarning)
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_excel from `anndata` is deprecated. Import anndata.io.read_excel instead.
+  warnings.warn(msg, FutureWarning)
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_mtx from `anndata` is deprecated. Import anndata.io.read_mtx instead.
+  warnings.warn(msg, FutureWarning)
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_loom from `anndata` is deprecated. Import anndata.io.read_loom instead.
+  warnings.warn(msg, FutureWarning)
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_hdf from `anndata` is deprecated. Import anndata.io.read_hdf instead.
+  warnings.warn(msg, FutureWarning)
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_umi_tools from `anndata` is deprecated. Import anndata.io.read_umi_tools instead.
+  warnings.warn(msg, FutureWarning)
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_umi_tools from `anndata` is deprecated. Import anndata.io.read_umi_tools instead.
+  warnings.warn(msg, FutureWarning)
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/anndata/utils.py:434: FutureWarning: Importing read_umi_tools from `anndata` is deprecated. Import anndata.io.read_umi_tools instead.
+  warnings.warn(msg, FutureWarning)
+[transformers] Disabling PyTorch because PyTorch >= 2.4 is required but found 2.3.1
+[transformers] Disabling PyTorch because PyTorch >= 2.4 is required but found 2.3.1
+[transformers] Disabling PyTorch because PyTorch >= 2.4 is required but found 2.3.1
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+[transformers] PyTorch was not found. Models won't be available and only tokenizers, configuration and file/data utilities can be used.
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/lightning_fabric/__init__.py:41: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/lightning_fabric/__init__.py:41: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/lightning_fabric/__init__.py:41: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/torchtext/vocab/__init__.py:4: UserWarning: 
+/!\ IMPORTANT WARNING ABOUT TORCHTEXT STATUS /!\ 
+Torchtext is deprecated and the last released version will be 0.18 (this one). You can silence this warning by calling the following at the beginnign of your scripts: `import torchtext; torchtext.disable_torchtext_deprecation_warning()`
+  warnings.warn(torchtext._TORCHTEXT_DEPRECATION_MSG)
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/torchtext/utils.py:4: UserWarning: 
+/!\ IMPORTANT WARNING ABOUT TORCHTEXT STATUS /!\ 
+Torchtext is deprecated and the last released version will be 0.18 (this one). You can silence this warning by calling the following at the beginnign of your scripts: `import torchtext; torchtext.disable_torchtext_deprecation_warning()`
+  warnings.warn(torchtext._TORCHTEXT_DEPRECATION_MSG)
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/torchtext/vocab/__init__.py:4: UserWarning: 
+/!\ IMPORTANT WARNING ABOUT TORCHTEXT STATUS /!\ 
+Torchtext is deprecated and the last released version will be 0.18 (this one). You can silence this warning by calling the following at the beginnign of your scripts: `import torchtext; torchtext.disable_torchtext_deprecation_warning()`
+  warnings.warn(torchtext._TORCHTEXT_DEPRECATION_MSG)
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/torchtext/utils.py:4: UserWarning: 
+/!\ IMPORTANT WARNING ABOUT TORCHTEXT STATUS /!\ 
+Torchtext is deprecated and the last released version will be 0.18 (this one). You can silence this warning by calling the following at the beginnign of your scripts: `import torchtext; torchtext.disable_torchtext_deprecation_warning()`
+  warnings.warn(torchtext._TORCHTEXT_DEPRECATION_MSG)
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/torchtext/vocab/__init__.py:4: UserWarning: 
+/!\ IMPORTANT WARNING ABOUT TORCHTEXT STATUS /!\ 
+Torchtext is deprecated and the last released version will be 0.18 (this one). You can silence this warning by calling the following at the beginnign of your scripts: `import torchtext; torchtext.disable_torchtext_deprecation_warning()`
+  warnings.warn(torchtext._TORCHTEXT_DEPRECATION_MSG)
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/torchtext/utils.py:4: UserWarning: 
+/!\ IMPORTANT WARNING ABOUT TORCHTEXT STATUS /!\ 
+Torchtext is deprecated and the last released version will be 0.18 (this one). You can silence this warning by calling the following at the beginnign of your scripts: `import torchtext; torchtext.disable_torchtext_deprecation_warning()`
+  warnings.warn(torchtext._TORCHTEXT_DEPRECATION_MSG)
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/torch/nn/modules/transformer.py:306: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer was not TransformerEncoderLayer
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/torch/nn/modules/transformer.py:306: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer was not TransformerEncoderLayer
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+/home/xwanaf/.conda/envs/unigenex_env/lib/python3.10/site-packages/torch/nn/modules/transformer.py:306: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer was not TransformerEncoderLayer
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+/home/xwanaf/bio/scGPT-dev-temp/Atlas_integration/Reproducibility/Validation/UniGeneX/model/model_pl_integration.py:1830: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer was not TransformerEncoderLayer
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+/home/xwanaf/bio/scGPT-dev-temp/Atlas_integration/Reproducibility/Validation/UniGeneX/model/model_pl_integration.py:1830: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer was not TransformerEncoderLayer
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+/home/xwanaf/bio/scGPT-dev-temp/Atlas_integration/Reproducibility/Validation/UniGeneX/model/model_pl_integration.py:1830: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer was not TransformerEncoderLayer
+  warnings.warn(f"enable_nested_tensor is True, but self.use_nested_tensor is False because {why_not_sparsity_fast_path}")
+Initializing distributed: GLOBAL_RANK: 1, MEMBER: 2/4
+Initializing distributed: GLOBAL_RANK: 2, MEMBER: 3/4
+Initializing distributed: GLOBAL_RANK: 3, MEMBER: 4/4
