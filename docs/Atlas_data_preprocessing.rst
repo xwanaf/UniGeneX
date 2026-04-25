@@ -43,7 +43,7 @@ Use ``filter.py`` to remove low-quality cells and perform log-scale normalizatio
 
 2. Highly Variable Gene (HVG) Selection
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Use ``hvg.py`` to identify the most informative genes across batches:
+Use ``hvg.py`` to identify HVGs for each dataset.
 
 .. code-block:: bash
 
@@ -76,4 +76,4 @@ The following notebook demonstrates how to construct the credible gene set by in
 .. toctree::
    :maxdepth: 1
 
-   _templates/select_genes_2k.ipynb
+   vignettes/select_genes_2k.ipynb
