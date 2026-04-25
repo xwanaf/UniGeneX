@@ -35,3 +35,26 @@ If you are using Jupyter Notebook, you can add your environment as a kernel:
 
    pip install ipykernel
    python -m ipykernel install --user --name unigenex_env --display-name "unigenex_env"
+   
+   
+To exactly reproduce the results, please copy _highly_variable_genes.py from `Zenodo repository <https://zenodo.org>`_ and then copy to conda env path. 
+
+
+This step is since modern Scanpy versions have updated their default settings, we provide a modified ``_highly_variable_genes.py`` file.
+.. code-block:: bash
+
+  cp _highly_variable_genes.py <SCANPY_PATH>/preprocessing/_highly_variable_genes.py
+
+1. **Download the file**:
+   Download ``_highly_variable_genes.py`` from our `Zenodo repository <https://zenodo.org>`_.
+
+3. **Replace the file**:
+   Copy the downloaded file into the Scanpy preprocessing directory. Replace ``<SCANPY_PATH>`` with the path discovered in the previous step:
+
+   .. code-block:: bash
+
+      # Example command
+      cp _highly_variable_genes.py <SCANPY_PATH>/preprocessing/_highly_variable_genes.py
+
+.. warning::
+   This step overwrites a core Scanpy file. We recommend performing this only inside a dedicated conda environment (e.g., ``unigenex_env``) to avoid affecting your other projects.
