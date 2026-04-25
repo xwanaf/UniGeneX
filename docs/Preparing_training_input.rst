@@ -1,27 +1,53 @@
 
-Atlas Data Preprocessing
+Prepare traning input files
 ========================
 
-This section describes how to prepare the Human Lung Cell Atlas (HLCA) data for UniGeneX training and inference.
-
-Preprocessing raw count data
---------------------
-
-You can downloaded the raw count data from `Zenodo (DOI: 10.5281/zenodo.19751716) <https://zenodo.org>`_ and also refer to the original paper https://www.nature.com/articles/s41591-023-02327-2
+After preprocessing the Atlas data, we will build vocabulary for credible gene set and intersect each dataset's hvgs with credible gene set and map to vocabulary to get the input for training transformer. Becauese the large scale of training data, we will build parquet format of training data for training.
 
 
-Run the following from ./01_preprocess_src. This step follows standard preprocessing steps for single-cell transcriptomics data: filter, normalize, log transformed and also select hvgs.
+Mapping to Credible Gene Set
+----------------------------
 
-.. code-block:: bash
-    ./preprocess_data.sh
-    
-    
-Construct credible gene set
---------------------
 
-The following notebook demonstrates how to construct the credible gene set by integrating Xenium gene panels and existing vocabulary files:
+Please run the following from 02_Generate_training_input and modify path of input and output. 
 
-.. toctree::
-   :maxdepth: 1
+.. code-block:: 
 
-   _templates/select_genes_2k.ipynb
+   ./transformer_parquet.sh
+
+
+command:
+
+
+python transformer_parquet.py \
+--base_path /import/home2/xwanaf/Img2Expr/data/Benchmarking/reproducibility/ \
+--gene_path /import/home2/xwanaf/Img2Expr/data/Benchmarking/reproducibility \
+--traingene_path /import/home2/xwanaf/Img2Expr/data/Benchmarking/reproducibility \
+--vocab_path /import/home2/xwanaf/Img2Expr/data/Benchmarking/reproducibility \
+--tissue '' \
+--data_path /import/home2/xwanaf/Img2Expr/data/Benchmarking/reproducibility/log_scale \
+--trainset_list_path /import/home2/xwanaf/Img2Expr/data/Benchmarking/reproducibility/HLCA_data_files_sl.npy \
+--save_folder Training_input \
+--skip_check_umap \
+--check_ct_col ann_finest_level
+
+
+Output:
+
+
+This step will output the following files 
+
+CellTypeMapping_df.csv: training data
+cls_prefix_data.parquet: traing data parquet 
+
+CellTypeMapping_df_valid.csv
+
+cls_prefix_data_valid.parquet
+config_inference.yaml
+config_train.yaml
+generate_configs_log.log
+log_scale_train_genes_pca
+obs_concat.csv
+obs_concat_valid.csv
+transformer_parquet_log.log
+transformer_parquet_valid_log.log
