@@ -7,7 +7,7 @@ This section describes how to prepare the Human Lung Cell Atlas (HLCA) data for 
 Preprocessing raw count data
 --------------------
 
-You can downloaded the raw count data from `Zenodo (DOI: 10.5281/zenodo.19751716) <https://zenodo.org>`_ and also refer to the original paper https://www.nature.com/articles/s41591-023-02327-2
+You can downloaded the raw count data from `Zenodo <https://doi.org/10.5281/zenodo.19751716>`_ and also refer to the original paper https://www.nature.com/articles/s41591-023-02327-2
 
 The preprocessing workflow follows standard single-cell transcriptomics procedures, including filtering, normalization, log transformation, and highly variable gene (HVG) selection.
 
@@ -74,7 +74,7 @@ Construct credible gene set
 The following notebook demonstrates how to construct a **credible gene set**.
 
 **Data Requirements**
-You can download the required input files (``Xenium_panel.npy`` or ``Xenium_Vannan_panel.npy``) and the output (``pretrain_data_train_genes.npy``) from Zenodo <https://doi.org/10.5281/zenodo.19750491>`_ .
+You can download the required input files (``Xenium_panel.npy`` or ``Xenium_Vannan_panel.npy``) and the output (``pretrain_data_train_genes.npy``) from `Zenodo <https://doi.org/10.5281/zenodo.19750491>`_ .
 
 
 .. toctree::

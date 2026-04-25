@@ -95,12 +95,30 @@ Successful execution will generate the following files in your ``--save_folder``
 Preparing config.yaml file for training
 ----------------------------
 
-Please download templete from 
-Run the following under ``./02_Generate_training_input`` directory using the provided shell script:
+Please download templete (``config_templete_train.yaml`` or ``config_templete_inference.yaml``) from `Zenodo <https://doi.org/10.5281/zenodo.19750491>`_ .
+
+Run the following under ``./02_Generate_training_input`` directory to modify parameters in templete using the provided shell script:
 
 
 .. code-block:: 
 
    ./generate_configs_train.sh
    ./generate_configs_inference.sh
+
+
+
+python generate_configs_train.py \
+--config_temp_path /import/home2/xwanaf/Img2Expr/data/Benchmarking/reproducibility/config_templete_train.yaml \
+--save_path /import/home2/xwanaf/Img2Expr/data/Benchmarking/reproducibility/Training_input \
+--save_config_name config_train \
+--vocab_path $base_path/default_census_vocab.json \
+--kld_weight 1e-3 \
+--common_dec_gene_len 1703 \
+--CellTypeMapping_df_paths $base_path/Training_input/CellTypeMapping_df_valid.csv \
+--data_source $base_path/Training_input/cls_prefix_data.parquet \
+--test_out_of_sample_data_source $base_path/Training_input/cls_prefix_data_valid.parquet \
+--common_dec_genes_path $base_path/pretrain_data_train_genes.npy \
+--max_epochs 30 \
+--gpus 0,1,2,3 \
+--devices 4
 
