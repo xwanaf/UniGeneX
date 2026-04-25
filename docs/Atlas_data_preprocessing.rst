@@ -71,7 +71,11 @@ Use ``hvg.py`` to identify HVGs for each dataset.
 Construct credible gene set
 --------------------
 
-The following notebook demonstrates how to construct the credible gene set by integrating Xenium gene panels and existing vocabulary files:
+The following notebook demonstrates how to construct a **credible gene set**.
+
+**Data Requirements**
+You can download the required input files (``Xenium_panel.npy`` or ``Xenium_Vannan_panel.npy``) and the output (``pretrain_data_train_genes.npy``) from Zenodo <https://doi.org/10.5281/zenodo.19750491>`_ .
+
 
 .. toctree::
    :maxdepth: 1
