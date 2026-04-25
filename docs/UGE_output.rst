@@ -25,6 +25,7 @@ The shell script calls the following:
        --ckpt_filename "reproduce_epoch30.ckpt"
 
 **Key Parameters:**
+
 * ``--config``: Path to the YAML inference configuration file, as generated in the :doc:`Preparing_training_input` section.
 * ``-s`` (or ``--save_dir``): The directory where the generated output will be stored.
 * ``--pretrain_root``: The directory containing the saved training model checkpoints.
@@ -52,13 +53,11 @@ Once the UGE of training data are generated, use the following script to map the
 
 
 **Key Parameters:**
+
 * ``--base_path``, ``--tissue``: Used to construct the path (``base_path/tissue``) where the credible gene set (``pretrain_data_train_genes.npy``) and metadata (``obs_concat.csv``) are located.
 * ``--traingene_path``: Explicit path to the directory containing ``pretrain_data_train_genes.npy``. If not specified, the script defaults to ``base_path/tissue``.
 * ``--transformer_out_path``: Path to the directory containing the UGE output generated in Step 1.
 * ``--save_atlas_name``: The filename for the final integrated ``.h5ad`` object.
-
-
-
 
 
     
