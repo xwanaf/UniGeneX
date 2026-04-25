@@ -22,8 +22,10 @@ exclude_patterns = []
 
 extensions = [
     'sphinx_rtd_theme',
-    # other extensions like 'nbsphinx' for notebooks
+    'nbsphinx',
 ]
+    # other extensions like 'nbsphinx' for notebooks
+
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
