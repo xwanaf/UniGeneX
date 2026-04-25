@@ -50,3 +50,14 @@ This step is since modern Scanpy versions have updated their default settings, w
 
 .. warning::
    This step overwrites a core Scanpy file. We recommend performing this only inside a dedicated conda environment (e.g., ``unigenex_env``) to avoid affecting your other projects.
+
+
+Please also download Arial* files from from `Zenodo <https://doi.org/10.5281/zenodo.19751716>`_  to enable Arial fonts:
+
+.. code-block:: bash
+
+  
+   MPL_DIR=$(python -c "import matplotlib; print(matplotlib.get_data_path())")
+   echo $MPL_DIR
+   cp /path/to/Arial*.ttf $MPL_DIR/fonts/ttf/
+   rm -rf ~/.cache/matplotlib
