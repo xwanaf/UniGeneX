@@ -12,7 +12,7 @@ UniGeneX documentation
    :caption: Contents:
 
    Installation
-   Atlas data preprocessing
+   Atlas_data_preprocessing
    Preparing training input
    Training
    UGE output
