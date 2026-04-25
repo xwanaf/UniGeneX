@@ -37,10 +37,11 @@ If you are using Jupyter Notebook, you can add your environment as a kernel:
    python -m ipykernel install --user --name unigenex_env --display-name "unigenex_env"
    
    
-To exactly reproduce the results, please copy _highly_variable_genes.py from `Zenodo <https://doi.org/10.5281/zenodo.19751716>`_ and then copy the file to conda env path. 
+To exactly reproduce the results, please download _highly_variable_genes.py from `Zenodo <https://doi.org/10.5281/zenodo.19751716>`_ and then copy the file to conda env path. 
 
 
-This step is since modern Scanpy versions have updated their default settings, we provide a modified ``_highly_variable_genes.py`` file.
+This step is since modern Scanpy versions have updated their default settings, Replacing ``_highly_variable_genes.py`` file file ensures .
+
 .. code-block:: bash
 
   SCANPY_DIR=$(python -c "import scanpy; print(scanpy.__path__[0])")
