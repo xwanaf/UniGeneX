@@ -15,5 +15,5 @@ UniGeneX documentation
    Atlas_data_preprocessing
    Preparing_training_input
    Training
-   UGE output
-   Zero-shot cell type annotation
+   UGE_output
+   Newly_comming_data
