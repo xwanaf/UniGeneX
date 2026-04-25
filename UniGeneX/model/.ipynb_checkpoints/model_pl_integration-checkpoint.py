@@ -47,16 +47,18 @@ from torchvision.utils import make_grid
 
 
 import sys
-sys.path.append('/home/xwanaf/superpod/mind-vis/code')
+root_dir = Path(__file__).resolve().parent.parent.parent
+if str(root_dir) not in sys.path:
+    sys.path.append(str(root_dir))
+
 
 
 from UniGeneX.loss import masked_mse_loss, masked_relative_error, criterion_neg_log_poisson, smooth_l1_loss
-from util import log_txt_as_img, exists, default, ismap, isimage, mean_flat, count_params, instantiate_from_config
 
 
 # from UniGeneX.preprocess import Preprocessor
 from UniGeneX.tokenizer import GeneVocab, random_mask_value, tokenize_batch
-from UniGeneX.utils import MainProcessOnly, ConfigWrapper, configure_logging
+from UniGeneX.utils import MainProcessOnly, ConfigWrapper, configure_logging, instantiate_from_config
 from UniGeneX import logger
 # from diffusion.plotumap import plotsampledata
 
