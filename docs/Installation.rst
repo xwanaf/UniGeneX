@@ -42,12 +42,17 @@ To exactly reproduce the results, please download _highly_variable_genes.py from
 
 This step is since modern Scanpy versions have updated their default settings, Replacing ``_highly_variable_genes.py`` file ensures the reproducibility.
 
+
 .. code-block:: bash
 
-  SCANPY_DIR=$(python -c "import scanpy; print(scanpy.__path__[0])")
-  echo $SCANPY_DIR
-  cp /path/to/_highly_variable_genes.py <SCANPY_PATH>/preprocessing/_highly_variable_genes.py
+  # 1. Locate your Scanpy installation path
+   SCANPY_DIR=$(python -c "import scanpy; print(scanpy.__path__[0])")
+   echo $SCANPY_DIR
 
+   # 2. Overwrite the default Scanpy file with the downloaded version
+   # Replace '/path/to/' with the actual directory of your downloaded file
+   cp /path/to/_highly_variable_genes.py $SCANPY_DIR/preprocessing/_highly_variable_genes.py
+   
 
 .. warning::
    This step overwrites a core Scanpy file. We recommend performing this only inside a dedicated conda environment (e.g., ``unigenex_env``) to avoid affecting your other projects.

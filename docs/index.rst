@@ -13,7 +13,7 @@ UniGeneX documentation
 
    Installation
    Atlas_data_preprocessing
-   Preparing training input
+   Preparing_training_input
    Training
    UGE output
    Zero-shot cell type annotation

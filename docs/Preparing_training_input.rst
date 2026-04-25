@@ -13,7 +13,6 @@ You can downloaded the raw count data from `Zenodo (DOI: 10.5281/zenodo.19751716
 Run the following from ./01_preprocess_src. This step follows standard preprocessing steps for single-cell transcriptomics data: filter, normalize, log transformed and also select hvgs.
 
 .. code-block:: bash
-
     ./preprocess_data.sh
     
     
