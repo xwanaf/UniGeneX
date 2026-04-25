@@ -76,4 +76,4 @@ The following notebook demonstrates how to construct the credible gene set by in
 .. toctree::
    :maxdepth: 1
 
-   vignettes/select_genes_2k.ipynb
+   vignettes/select_genes_2k
