@@ -1,59 +1,56 @@
 Zero-shot cell type annotation for newly comming data
 ========
 
-After training is complete, the following steps generate UGE of trainnig data in ``.h5ad`` format. You can also directly download processed UGE atlas (``Training_output/atlas_1e3_maskp5_processed.h5ad``) from `Zenodo <https://doi.org/10.5281/zenodo.19750491>`_ .
+For new datasets at single-cell resolution—whether derived from dissociated single-cell sequencing or spatial transcriptomics—the same preprocessing pipeline can be followed to generate Parquet input files. Once the input is prepared, use ``Gen_UGE.py`` to generate the UGE. 
+
+You can download the necessary files for this step (``Training_input_testdata.zip``) from `Zenodo (DOI: 10.5281/zenodo.19750491) <https://doi.org/10.5281/zenodo.19750491>`_ or you can directly download the processed UGE for the test data (``Training_output/Testdata_UGE.h5ad``).
+
+These UGE can then be mapped onto the existing UGE atlas to achieve zero-shot cell type annotation by leveraging the high-resolution labels of the reference atlas.
 
 
-Navigate to the ``./04_Gen_UGE`` directory and execute the following script.
+Mapping New Data to the UGE Atlas
+---------------------------------
+
+Navigate to the ``./05_UGE_celltype_annotation`` directory and execute the mapping script:
 
 .. code-block:: bash
 
-   ./Gen_UGEatlas.sh 2>&1 | tee debug.log
+   ./transformer_map_to_atlas.sh
 
-
-The shell script calls the following:
+The shell script executes the following Python command:
 
 .. code-block:: bash
 
-   python Gen_UGE.py \
-       --config /path/to/config_inference.yaml \
-       -s /path/to/Inference_output_directory \
-       --pretrain_root /path/to/Training_output_directory \
-       --eval_batch_size 256 \
-       --subsample 1000000 \
-       --custom_ckptpath \
-       --ckpt_filename "reproduce_epoch30.ckpt"
+    python transformer_map_to_atlas.py \
+        --atlas_path /path/to/atlas_1e3_maskp5_processed.h5ad \
+        --adata_inte_path /path/to/Testdata_UGE.h5ad \
+        --fitted_NN_path /path/to/NN_atlas_1e3_maskp5 \
+        --recompute_pca \
+        --save_nn_path /path/to/NN_testdata_mapped_results \
+        --atlas_assign_label_col ann_finest_level
 
-**Key Parameters:**
-* ``--config``: Path to the YAML inference configuration file, as generated in the :doc:`Preparing_training_input` section.
-* ``-s`` (or ``--save_dir``): The directory where the generated output will be stored.
-* ``--pretrain_root``: The directory containing the saved training model checkpoints.
-* ``--eval_batch_size``: The number of cells processed per batch during inference.
-* ``--subsample``: The maximum number of cells to process (e.g., 1,000,000).
-* ``--custom_ckptpath``: *Flag.* If set, the script uses the manual checkpoint path (``/pretrain_root/ckpt``). Otherwise, it defaults to the PyTorch Lightning path (``/pretrain_root/plainLogger/0.1/checkpoints``).
-* ``--ckpt_filename``: The specific checkpoint filename to use for generating UGE.
+**Parameter Descriptions**
 
-
-
-Step 2: Convert UGE to AnnData
+``--atlas_path``
+    Path to the reference UGE atlas file (``.h5ad``).
+``--adata_inte_path``
+    Path to the UGE file of the new (query) dataset to be annotated.
+``--fitted_NN_path``
+    Path to save fitted Nearest Neighbor (NN) model for the reference atlas.
+``--recompute_pca``
+    *Flag.* If set, the script will recompute the PCA space for UGE atlas.
+``--save_nn_path``
+    The directory where the mapping results and the updated NN model will be saved.
+``--atlas_assign_label_col``
+    The metadata column in the reference atlas (e.g., ``ann_finest_level``) that will be used to assign labels to the new data.
+    
+    
+Verification and Visualization
 ------------------------------
 
-Once the UGE of training data are generated, use the following script to map them back to the original gene metadata and save the result as an integrated Atlas file.
+After completing the mapping and zero-shot annotation, you can verify and visualize the results using the provided validation notebook:
 
-.. code-block:: bash
+.. toctree::
+   :maxdepth: 1
 
-   python UGE_to_adata.py \
-       --base_path /path/to/reproducibility/ \
-       --tissue 'Training_input' \
-       --save_folder 'Training_output' \
-       --traingene_path /path/to/reproducibility \
-       --transformer_out_path /path/to/Inference_output_directory \
-       --save_atlas_name atlas_1e3_maskp5.h5ad
-
-
-**Key Parameters:**
-* ``--base_path``, ``--tissue``: Used to construct the path (``base_path/tissue``) where the credible gene set (``pretrain_data_train_genes.npy``) and metadata (``obs_concat.csv``) are located.
-* ``--traingene_path``: Explicit path to the directory containing ``pretrain_data_train_genes.npy``. If not specified, the script defaults to ``base_path/tissue``.
-* ``--transformer_out_path``: Path to the directory containing the UGE output generated in Step 1.
-* ``--save_atlas_name``: The filename for the final integrated ``.h5ad`` object.
-
+   vignettes/Testdata_mapped_results.ipynb
