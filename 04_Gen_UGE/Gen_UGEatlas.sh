@@ -2,14 +2,14 @@
 set -o pipefail
 set -exu
 
-# python /home/xwanaf/bio/scGPT-dev-temp/Atlas_integration/Reproducibility/Validation/04_Gen_UGE/Gen_UGE.py \
-# --config /import/home2/xwanaf/Img2Expr/data/Benchmarking/reproducibility/Training_input/config_inference.yaml \
-# -s /import/home2/xwanaf/Img2Expr/data/Benchmarking/reproducibility/Training_output/Inference_HLCA_KL1e-3_maskp5 \
-# --pretrain_root /import/home2/xwanaf/Img2Expr/data/Benchmarking/reproducibility/Training_output/Generation_HLCA_KL1e-3_maskp5 \
-# --eval_batch_size 256 \
-# --subsample 1000000 \
-# --custom_ckptpath \
-# --ckpt_filename "reproduce_epoch30.ckpt" 
+python /home/xwanaf/bio/scGPT-dev-temp/Atlas_integration/Reproducibility/Validation/04_Gen_UGE/Gen_UGE.py \
+--config /import/home2/xwanaf/Img2Expr/data/Benchmarking/reproducibility/Training_input/config_inference.yaml \
+-s /import/home2/xwanaf/Img2Expr/data/Benchmarking/reproducibility/Training_output/Inference_HLCA_KL1e-3_maskp5 \
+--pretrain_root /import/home2/xwanaf/Img2Expr/data/Benchmarking/reproducibility/Training_output/Generation_HLCA_KL1e-3_maskp5 \
+--eval_batch_size 256 \
+--subsample 1000000 \
+--custom_ckptpath \
+--ckpt_filename "reproduce_epoch30.ckpt" 
 
 
 

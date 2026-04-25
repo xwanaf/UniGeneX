@@ -8,8 +8,11 @@ from pathlib import Path
 import copy
 import json
 import sys
-sys.path.append('/home/xwanaf/bio/scGPT-dev-temp/Atlas_integration/Reproducibility/Validation')
-sys.path.append('/home/xwanaf/bio/scGPT-dev-temp/Atlas_integration/Reproducibility/Validation/03_Training_src')
+
+current_dir = os.path.dirname(os.path.realpath(__file__))
+parent_dir = os.path.dirname(current_dir)
+sys.path.append(parent_dir)
+sys.path.append(os.path.join(parent_dir, '03_Training_src'))
 
 
 
