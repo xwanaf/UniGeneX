@@ -24,7 +24,9 @@ from scipy.sparse import issparse
 
 
 import sys
-sys.path.append('/home/xwanaf/bio/scGPT-dev-temp/Atlas_integration/Reproducibility/Validation')
+current_dir = os.path.dirname(os.path.realpath(__file__))
+parent_dir = os.path.dirname(current_dir)
+sys.path.append(parent_dir)
 from UniGeneX.utils import *
 
 import argparse
