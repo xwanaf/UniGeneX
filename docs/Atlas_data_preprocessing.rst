@@ -80,4 +80,4 @@ You can download the required input files (``Xenium_panel.npy`` or ``Xenium_Vann
 .. toctree::
    :maxdepth: 1
 
-   vignettes/select_genes_2k
+   vignettes/select_genes_2k.ipynb
