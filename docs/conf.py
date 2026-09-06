@@ -7,24 +7,23 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'UniGeneX'
-copyright = '2026, Author'
-author = 'Author'
+copyright = '2026, UniGeneX authors'
+author = 'UniGeneX authors'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = []
-
 templates_path = ['_templates']
-exclude_patterns = []
-
-# -- General configuration ---------------------------------------------------
+exclude_patterns = ['_build', '**/.ipynb_checkpoints']
 
 extensions = [
     'sphinx_rtd_theme',
     'nbsphinx',
 ]
-    # other extensions like 'nbsphinx' for notebooks
+
+# Documentation notebooks contain saved outputs from large analyses. Render
+# those outputs on Read the Docs without rerunning the notebooks.
+nbsphinx_execute = 'never'
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output

@@ -12,7 +12,7 @@ Installation
    :caption: Contents:
 
 Create new conda environment
--------------------
+----------------------------
 
 .. code-block:: bash
 
@@ -21,8 +21,11 @@ Create new conda environment
 
 Install Dependencies
 --------------------
+
 .. code-block:: bash
+
     pip install -r requirements.txt
+
 The following step may take a while. Please refer to the `FlashAttention GitHub <https://github.com/dao-ailab/flash-attention>`_ for more details:
 
 .. code-block:: bash

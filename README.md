@@ -2,14 +2,12 @@
 
 [Documentation Status](https://unigenex.readthedocs.io/en/latest/)
 
-[DOI](https://doi.org)
-
 **UniGeneX** is a single-cell foundation model designed to construct a comprehensive Universal Gene Expression (UGE) atlas to uncover underlying cell-state transitions and associated microenvironments in human diseases. The framework consists of two main stages—training and inference—and features three novel characteristics: it is **context-specific**, **interpretable**, and **actionable**. 
 
 The UGE atlas serves as a comprehensive reference dataset that integrates multiple data types for various downstream analyses, such as the deconvolution of bulk RNA-seq and spatial transcriptomics data across various resolutions. By integrating a highly interpretable UGE atlas with spatial transcriptomics data, UniGeneX provides a powerful framework for deciphering cell-state transitions during disease progression and their associated microenvironmental changes.
 
 ![Figure 1](docs/_static/Fig1.png)  
-*Figure 1: Overview of the UniGeneX framework and its applications in disease characterization.*
+*Figure 1. Overview of the UniGeneX training and inference workflow and model design.*
 
 ## 🛠️ Installation
 

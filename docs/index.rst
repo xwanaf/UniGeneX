@@ -1,15 +1,27 @@
-.. UniGeneX documentation master file, created by
-   sphinx-quickstart on Fri Apr 24 19:33:14 2026.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 UniGeneX documentation
 ======================
 
-   
+UniGeneX is a single-cell foundation model for constructing a universal gene
+expression (UGE) atlas and studying cell-state transitions and their associated
+microenvironments in human disease. The framework has two stages, training and
+inference, and is designed to be context-specific, interpretable and actionable.
+
+.. figure:: _static/Fig1.png
+   :alt: UniGeneX training and inference workflow and model design
+   :align: center
+   :width: 100%
+
+   Overview of the UniGeneX training and inference workflow and model design.
+
+The UGE atlas provides a comprehensive single-cell reference for integrating
+multiple data types and performing downstream analyses, including bulk and
+spatial-transcriptomics decomposition and atlas mapping of newly acquired data.
+
+Documentation contents
+----------------------
+
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
 
    Installation
    Atlas_data_preprocessing
@@ -17,13 +29,4 @@ UniGeneX documentation
    Training
    UGE_output
    Newly_comming_data
-
-
-
-.. figure:: _static/Fig1.png
-   :alt: UniGeneX Workflow
-   :align: center
-   
-UniGeneX is a single-cell foundation model designed to construct a comprehensive UGE atlas to uncover the underlying cell state transitions and associated microenvironment in human diseases. The framework consists of two main stages, training and inference, and three novel features: context-specific, interpretable and actionable. 
-
-The UGE atlas can serve as a comprehensive single-cell reference dataset that integrate multiple data type and perform various downstream analyses. For example, the deconvolution of bulk RNA-seq data and spatial transcriptomics data with various resolution. By integrating highly an interpretable UGE atlas with spatial transcriptomics data, UniGenX provide a powerful framework for deciphering cell state transitions during disease progression and their associated microenvironmental changes.
+   Pulmonary_fibrosis

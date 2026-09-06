@@ -1,5 +1,5 @@
 UGE atlas and cell type harmonization
-========
+=====================================
 
 After training is complete, the following steps generate UGE of trainnig data in ``.h5ad`` format. You can also directly download processed UGE atlas (``Training_output/atlas_1e3_maskp5_processed.h5ad``) from `Zenodo <https://doi.org/10.5281/zenodo.19750491>`_ .
 
@@ -62,7 +62,7 @@ Once the UGE of training data are generated, use the following script to map the
 
     
 UGE atlas visualization and cell type harmonization
---------------------
+----------------------------------------------------
 
 The UGE atlas integrates seamlessly into standard single-cell workflows for downstream analysis, such as dimensionality reduction and unsupervised clustering. Furthermore, we demonstrate advanced applications within the manuscript, including the characterization of cell-state transitions during disease progression and associated microenvironmental alterations through the integration of spatial transcriptomics data.
 

@@ -1,0 +1,26 @@
+# Python-generated files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Jupyter autosave files
+.ipynb_checkpoints/
+
+# Documentation builds
+/build/
+/docs/_build/
+
+# Runtime logs
+*.log
+
+# Downloaded data and generated analysis results
+/data/
+/Real_data_PF/data/
+/Real_data_PF/outputs/
+/05_UGE_celltype_annotation/NN_mapped_results/
+/05_UGE_celltype_annotation/NN_testdata_mapped_results/
+
+# Operating-system metadata
+.DS_Store
