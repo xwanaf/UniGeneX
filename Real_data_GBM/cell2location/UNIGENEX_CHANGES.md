@@ -10,6 +10,12 @@ the included Apache License 2.0.
 - UniGeneX variant: `0.1.5+unigenex.gbmv1`
 - Frozen from the manuscript working copy used to generate Figures 6C-D.
 
+## Method citation
+
+Kleshchevnikov et al. *Cell2location maps fine-grained cell types in spatial
+transcriptomics.* Nature Biotechnology 40, 661–671 (2022).
+<https://doi.org/10.1038/s41587-021-01139-4>
+
 ## Model changes
 
 The spatial model can use an observed background-frequency profile calculated

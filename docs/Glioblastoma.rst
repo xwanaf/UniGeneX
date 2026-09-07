@@ -74,6 +74,13 @@ of presenting it as a general software function.
 Cell2location functions
 -----------------------
 
+Spatial deconvolution uses `Cell2location
+<https://doi.org/10.1038/s41587-021-01139-4>`_, the published method of
+Kleshchevnikov et al. (*Nature Biotechnology*, 2022) for mapping fine-grained
+cell types in spatial transcriptomics. UniGeneX supplies the UGE atlas and
+cell-state reference; the bundled Cell2location variant adds the
+gene-specific background option used for Figure 6.
+
 The reusable functions are defined in
 ``Real_data_GBM/deconvolve_visium.py``. Both model-fitting functions require a
 CUDA GPU; CPU-only systems should use the released precomputed results.
