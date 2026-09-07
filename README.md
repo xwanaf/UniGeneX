@@ -52,7 +52,10 @@ cp /path/to/_highly_variable_genes.py $SCANPY_DIR/preprocessing/_highly_variable
 
 ## 📂 Data Availability
 
-All intermediate input and output files are available on [Zenodo](https://doi.org/10.5281/zenodo.19751716) and [Zenodo](https://doi.org/10.5281/zenodo.19750491)
+- [HLCA preprocessing support data](https://doi.org/10.5281/zenodo.19751716)
+- [UniGeneX basic tutorial and model outputs](https://doi.org/10.5281/zenodo.19750491)
+- [Pulmonary fibrosis tutorial data](https://doi.org/10.5281/zenodo.22489310)
+- [Glioblastoma UGE atlas and Visium tutorial data](https://doi.org/10.5281/zenodo.22566537)
 
 
 ## 📊 Documentation

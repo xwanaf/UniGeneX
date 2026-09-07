@@ -19,6 +19,8 @@ htmlcov/
 /data/
 /Real_data_PF/data/
 /Real_data_PF/outputs/
+/Real_data_GBM/outputs/
+/Real_data_GBM/scripts/prepare_uge_atlas.py
 /05_UGE_celltype_annotation/NN_mapped_results/
 /05_UGE_celltype_annotation/NN_testdata_mapped_results/
 
